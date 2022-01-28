@@ -1,20 +1,15 @@
 <!doctype html>
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 <title>{% block title %}{% endblock %} - PIC16B Website</title>
+
 <nav>
-  <h1>PIC16B Example Webapp!</h1>
+  <h1>PIC16B: A Simple Message Bank</h1>
   <!-- <b>Navigation:</b> -->
-  <ul>
-    <li><a href="{{ url_for('main') }}">Main page</a></li>
-    <li><a href="{{ url_for('hello')}}">Hello</a></li>
-    <li><a href="{{ url_for('ask') }}">Ask</a></li>
-    <li><a href="{{ url_for('submit_basic') }}">Submit (basic)</a></li>
-    <li><a href="{{ url_for('submit') }}">Submit (advanced)</a></li>
-  </ul>
 </nav>
 <section class="content">
-  <header>
-    {% block header %}{% endblock %}
-  </header>
+    <ul>
+      <h1 style="font-size:1.875em; font-family: cursive;" ><li><a href="{{ url_for('submit') }}">Submit a message</a></li>
+      <li><a href="{{ url_for('view') }}">View messages</a></li></h1>
+    </ul>
   {% block content %}{% endblock %}
 </section>

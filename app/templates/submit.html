@@ -1,29 +1,22 @@
 {% extends 'base.html' %}
 
-{% block header %}
-  <h1>{% block title %}Submit a File{% endblock %}</h1>
-{% endblock %}
 
 {% block content %}
-  <form method="post" enctype="multipart/form-data">
-      <label for="image">Please upload an image.</label><br>
-      <input type="file" name="image" id="image">
+<center>
+<p><h2><strong>Please Submit Your Message Here</strong></h2></p>
+  <form method="post">
+      <label for="message">Your message: </label><br>
+      <input name="message">
+      <br>
+      <label for="message">Your name or handle: </label><br>
+      <input name="handle">
+      <br>
       <input type="submit" value="Submit form">
   </form>
-
+</center>
   {% if thanks %}
-    Thanks for submitting a file!
+    Thank you for submitting a message!
   {% endif %}
 
-  {% if digit %}
-    <br>
-    Thanks for the image!  It looks like a {{digit}}.
-    <br>
-    <img src="{{ image }}", alt="an 8x8 visualization of the supplied digit."/>
-  {% endif %}
 
-  {% if error %}
-    <br>
-    Oh no, we couldn't use that file!  Please upload an 8x8 numpy array as a text file.
-  {% endif %}
 {% endblock %}
